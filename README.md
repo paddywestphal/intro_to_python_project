@@ -89,18 +89,6 @@ This prevents conflicts and ensures everyone works with the latest version.
 
 ---
 
-## 📚 7. Folder Structure (to be updated during development)
-
-/project_root
-├── src/ # program code
-├── data/ # price files, etc.
-├── docs/ # instructions, diagrams
-├── tests/ # optional test scripts
-├── README.md # this file
-└── ...
-
----
-
 ## 🧩 8. Contribution Rules
 
 - Always work in **your branch**  
