@@ -30,6 +30,13 @@ You **must not** commit directly to `main`.
 ### To switch to your branch:
 PyCharm → Top Left (Branch Symbol) → Remote → select **your branch**
 
+## BEFORE CODING (every time): Checkout and Rebase onto main
+
+Go to:
+Branches → (Your Branch) → Checkout and Rebase onto ‘main’
+
+Now your branch is fully up-to-date — start coding 🚀
+
 ---
 
 ## ✏️ 3. Make Changes → Commit → Push
