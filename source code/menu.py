@@ -12,7 +12,7 @@ Responsibilities:
 
 from __future__ import annotations
 
-from typing import Callable, Dict, Optional, Tuple
+from typing import Callable, Dict, Optional, Tuple, Sequence, Set, Type, TypeVar, Union
 
 import data_io
 import transactions
@@ -35,6 +35,78 @@ except Exception:
 StocksDict = Dict[str, Dict[str, float]]
 PortfolioDict = Dict[str, int]
 
+#Helpers: Input validation. These helpers are UI-level utilities to validate user input.
+#They do not perform business logic (buy/sell/value), only input checking.
+T = TypeVar("T", int, str)
+
+
+def prompt_choice(valid_choices: Sequence[T], prompt: str = "Choose an option: ") -> T:
+    """
+    Prompt user until they enter a value in valid_choices.
+    Return type matches the type of items in valid_choices (str or int).
+    """
+    if not valid_choices:
+        raise ValueError("valid_choices must not be empty.")
+
+    expected_type: Type[T] = type(valid_choices[0])  # infer int vs str
+    choice_set: Set[T] = set(valid_choices)
+
+    while True:
+        raw = input(prompt).strip()
+
+        try:
+            if expected_type is int:
+                value: Union[int, str] = int(raw)
+            else:
+                value = raw
+        except ValueError:
+            print("Invalid input type. Please try again.")
+            continue
+
+        if value in choice_set:
+            return value  # type: ignore[return-value]
+
+        allowed = ", ".join(str(c) for c in valid_choices)
+        print(f"Invalid choice. Allowed: {allowed}")
+
+
+def prompt_symbol(stocks: dict, prompt: str = "Enter stock symbol (e.g., AAPL): ") -> str:
+    """
+    Prompt for a ticker symbol until it exists in the stocks dict.
+    Returns the validated symbol (uppercase).
+    """
+    if not isinstance(stocks, dict) or not stocks:
+        raise ValueError("stocks must be a non-empty dictionary of available tickers.")
+
+    while True:
+        symbol = input(prompt).strip().upper()
+        if not symbol:
+            print("Symbol cannot be empty.")
+            continue
+        if symbol not in stocks:
+            print(f"Unknown symbol '{symbol}'. Please choose one that exists in the stocks list.")
+            continue
+        return symbol
+
+
+def prompt_positive_int(prompt: str = "Enter a positive whole number: ") -> int:
+    """
+    Prompt until the user enters a positive integer (>= 1).
+    """
+    while True:
+        raw = input(prompt).strip()
+        try:
+            value = int(raw)
+        except ValueError:
+            print("Please enter a whole number (integer).")
+            continue
+
+        if value < 1:
+            print("Please enter a number >= 1.")
+            continue
+
+        return value
+
 
 def _prompt_nonempty(prompt: str) -> str:
     """Prompt until user enters a non-empty string."""
@@ -45,36 +117,10 @@ def _prompt_nonempty(prompt: str) -> str:
         print("Input cannot be empty. Please try again.")
 
 
-def _prompt_int(prompt: str, *, min_value: Optional[int] = None) -> int:
-    """Prompt until user enters a valid integer (optionally with a minimum)."""
-    while True:
-        raw = input(prompt).strip()
-        try:
-            value = int(raw)
-        except ValueError:
-            print("Please enter a whole number (integer).")
-            continue
-
-        if min_value is not None and value < min_value:
-            print(f"Please enter a value >= {min_value}.")
-            continue
-
-        return value
-
-
 def _prompt_path(prompt: str, default_path: str) -> str:
     """Prompt for a file path; return default if user presses Enter."""
     raw = input(f"{prompt} (Enter for default: {default_path}): ").strip()
     return raw if raw else default_path
-
-
-def _prompt_symbol(stocks: StocksDict) -> str:
-    """Prompt for a stock ticker symbol, normalized to uppercase."""
-    symbol = _prompt_nonempty("Enter stock symbol (e.g., AAPL): ").upper()
-    if symbol not in stocks:
-        # We still return it (transactions may handle), but give immediate feedback.
-        print(f"Warning: '{symbol}' not found in available stocks.")
-    return symbol
 
 
 def _print_portfolio_summary(portfolio: PortfolioDict) -> None:
@@ -143,7 +189,10 @@ def main_menu_loop() -> None:
         for key, label in menu_options:
             print(f"{key}) {label}")
 
-        choice = input("Choose an option (1-9): ").strip()
+        choice = prompt_choice(
+            ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+            "Choose an option (1-9): "
+        )
 
         if choice == "1":
             def action() -> None:
@@ -154,8 +203,8 @@ def main_menu_loop() -> None:
 
         elif choice == "2":
             def action() -> None:
-                symbol = _prompt_symbol(stocks)
-                qty = _prompt_int("Quantity to buy: ", min_value=1)
+                symbol = prompt_symbol(stocks)
+                qty = prompt_positive_int("Quantity to buy: ")
                 updated = transactions.buy(portfolio, stocks, symbol, qty)
                 portfolio.clear()
                 portfolio.update(updated)
@@ -166,8 +215,8 @@ def main_menu_loop() -> None:
 
         elif choice == "3":
             def action() -> None:
-                symbol = _prompt_symbol(stocks)
-                qty = _prompt_int("Quantity to sell: ", min_value=1)
+                symbol = prompt_symbol(stocks)
+                qty = prompt_positive_int("Quantity to sell: ")
                 updated = transactions.sell(portfolio, stocks, symbol, qty)
                 portfolio.clear()
                 portfolio.update(updated)
@@ -222,8 +271,6 @@ def main_menu_loop() -> None:
             print("Goodbye.")
             break
 
-        else:
-            print("Invalid choice. Please enter a number from 1 to 9.")
 
 
 if __name__ == "__main__":
