@@ -149,11 +149,11 @@ def main_menu_loop() -> None:
     Main CLI loop with numbered options:
     view stocks, buy, sell, value, ROI, pie chart, save, load, exit.
 
-    Loads stocks on startup from a CSV (proposal requirement).
+    Loads stocks on startup from a CSV.
     """
     print("=== Stock Portfolio Tracker ===")
 
-    # Load stocks once at startup (proposal).
+    # Load stocks once at startup.
     if TEST_MODE:
         stocks: StocksDict = {
             "AAPL": {"initial_price": 150.0, "current_price": 165.0},
