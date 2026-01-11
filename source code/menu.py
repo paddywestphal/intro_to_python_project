@@ -132,17 +132,49 @@ def _print_portfolio_summary(portfolio: PortfolioDict) -> None:
     for symbol, qty in sorted(portfolio.items()):
         print(f"  - {symbol}: {qty}")
 
+def _friendly_error(action: str, exc: Exception) -> str:
+    """
+    Convert exceptions (raised by other modules) into user-friendly messages.
+    UI-only: no business logic, just messaging.
+    """
+    # Common file/path errors
+    if isinstance(exc, FileNotFoundError):
+        return f"{action}: File not found. Please check the path and try again."
+    if isinstance(exc, PermissionError):
+        return f"{action}: Permission denied. Try a different file/location."
+    if isinstance(exc, IsADirectoryError):
+        return f"{action}: You entered a folder path, not a file path."
+
+    # Typical errors from transactions/analysis modules (recommended to raise ValueError with a message)
+    if isinstance(exc, ValueError):
+        msg = str(exc).strip()
+        return f"{action}: {msg}" if msg else f"{action}: Invalid input or operation."
+
+    # Fallback
+    msg = str(exc).strip()
+    return f"{action}: {msg}" if msg else f"{action}: Unexpected error."
 
 def _safe_call(action_name: str, fn: Callable[[], None]) -> None:
     """
     Run a menu action with basic error handling to prevent the loop from crashing.
-    This is UI-level only; modules should raise exceptions or return normal values.
+    Shows user-friendly error messages.
     """
     try:
         fn()
     except Exception as exc:
-        print(f"[{action_name}] Error: {exc}")
+        print(_friendly_error(action_name, exc))
 
+
+def _pause() -> None:
+    """Pause so the user can read output before the menu shows again."""
+    input("\nPress Enter to continue...")
+
+
+def _print_menu(menu_options: Tuple[Tuple[str, str], ...]) -> None:
+    """Print the numbered main menu."""
+    print("\n--- Main Menu ---")
+    for key, label in menu_options:
+        print(f"{key}) {label}")
 
 def main_menu_loop() -> None:
     """
@@ -166,7 +198,7 @@ def main_menu_loop() -> None:
         try:
             stocks = data_io.load_stocks(stocks_csv)
         except Exception as exc:
-            print(f"Failed to load stocks from '{stocks_csv}': {exc}")
+            print(_friendly_error("Load stocks", exc))
             print("Exiting program.")
             return
 
@@ -185,9 +217,8 @@ def main_menu_loop() -> None:
     )
 
     while True:
-        print("\n--- Main Menu ---")
-        for key, label in menu_options:
-            print(f"{key}) {label}")
+        _print_menu(menu_options)
+
 
         choice = prompt_choice(
             ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -200,6 +231,7 @@ def main_menu_loop() -> None:
                 print(table)
 
             _safe_call("View stocks", action)
+            _pause()
 
         elif choice == "2":
             def action() -> None:
@@ -212,11 +244,21 @@ def main_menu_loop() -> None:
                 _print_portfolio_summary(portfolio)
 
             _safe_call("Buy", action)
+            _pause()
 
         elif choice == "3":
             def action() -> None:
+                if not portfolio:
+                    print("Portfolio is empty. Nothing to sell.")
+                    return
                 symbol = prompt_symbol(stocks)
                 qty = prompt_positive_int("Quantity to sell: ")
+
+                owned = portfolio.get(symbol, 0)
+                if owned == 0:
+                    print(f"You do not own any shares of {symbol}.")
+                    return
+
                 updated = transactions.sell(portfolio, stocks, symbol, qty)
                 portfolio.clear()
                 portfolio.update(updated)
@@ -224,6 +266,7 @@ def main_menu_loop() -> None:
                 _print_portfolio_summary(portfolio)
 
             _safe_call("Sell", action)
+            _pause()
 
         elif choice == "4":
             def action() -> None:
@@ -231,6 +274,7 @@ def main_menu_loop() -> None:
                 print(f"Current portfolio value: {value:.2f}")
 
             _safe_call("Portfolio value", action)
+            _pause()
 
         elif choice == "5":
             def action() -> None:
@@ -238,6 +282,7 @@ def main_menu_loop() -> None:
                 print(f"ROI: {roi:.2f}%")
 
             _safe_call("ROI", action)
+            _pause()
 
         elif choice == "6":
             def action() -> None:
@@ -247,6 +292,7 @@ def main_menu_loop() -> None:
                 visualization.plot_allocation_pie(portfolio, stocks)
 
             _safe_call("Pie chart", action)
+            _pause()
 
         elif choice == "7":
             def action() -> None:
@@ -255,6 +301,7 @@ def main_menu_loop() -> None:
                 print(f"Portfolio saved to '{path}'.")
 
             _safe_call("Save portfolio", action)
+            _pause()
 
         elif choice == "8":
             def action() -> None:
@@ -266,6 +313,7 @@ def main_menu_loop() -> None:
                 _print_portfolio_summary(portfolio)
 
             _safe_call("Load portfolio", action)
+            _pause()
 
         elif choice == "9":
             print("Goodbye.")
