@@ -239,8 +239,8 @@ def main_menu_loop() -> None:
                 symbol = prompt_symbol(stocks)
                 qty = prompt_positive_int("Quantity to buy: ")
                 updated = transactions.buy(portfolio, stocks, symbol, qty)
-                portfolio.clear()
-                portfolio.update(updated)
+                #portfolio.clear()
+                #portfolio.update(updated)
                 print(f"Bought {qty} shares of {symbol}.")
                 _print_portfolio_summary(portfolio)
 
@@ -261,8 +261,8 @@ def main_menu_loop() -> None:
                     return
 
                 updated = transactions.sell(portfolio, stocks, symbol, qty)
-                portfolio.clear()
-                portfolio.update(updated)
+                #portfolio.clear()
+                #portfolio.update(updated)
                 print(f"Sold {qty} shares of {symbol}.")
                 _print_portfolio_summary(portfolio)
 
