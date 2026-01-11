@@ -19,7 +19,8 @@ import transactions
 import analysis
 import visualization
 
-TEST_MODE = True  # set to False when integrating with data_io
+TEST_MODE = False  # set to False when integrating with data_io
+                    # Fabian: set to false
 
 # Optional config defaults (fallback to common filenames if config.py not ready yet)
 try:
