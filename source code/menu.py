@@ -202,7 +202,8 @@ def main_menu_loop() -> None:
             print("Exiting program.")
             return
 
-    portfolio: PortfolioDict = {}
+    #portfolio: PortfolioDict = {}
+    portfolio = {"AAPL": 2, "MSFT": 1} #only for TESTING!
 
     menu_options: Tuple[Tuple[str, str], ...] = (
         ("1", "View available stocks"),
