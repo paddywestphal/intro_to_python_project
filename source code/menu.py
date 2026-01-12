@@ -19,7 +19,8 @@ import transactions
 import analysis
 import visualization
 
-TEST_MODE = True  # set to False when integrating with data_io
+TEST_MODE = False  # set to False when integrating with data_io
+                    # Fabian: set to false
 
 # Optional config defaults (fallback to common filenames if config.py not ready yet)
 try:
@@ -202,8 +203,8 @@ def main_menu_loop() -> None:
             print("Exiting program.")
             return
 
-    #portfolio: PortfolioDict = {}
-    portfolio = {"AAPL": 2, "MSFT": 1} #only for TESTING!
+    portfolio: PortfolioDict = {}
+    #portfolio = {"AAPL": 2, "MSFT": 1} #only for TESTING!
 
     menu_options: Tuple[Tuple[str, str], ...] = (
         ("1", "View available stocks"),
