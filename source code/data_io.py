@@ -22,7 +22,7 @@ def load_stocks(path: str) -> dict:
     with open(path, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
-        # Basic header check (optional but helpful)
+        # Basic header check
         required = ["symbol", "initial_price", "current_price"]
         for col in required:
             if col not in reader.fieldnames:
@@ -31,7 +31,7 @@ def load_stocks(path: str) -> dict:
         for row in reader:
             symbol = row["symbol"].strip().upper()
             if not symbol:
-                continue  # skip empty lines
+                continue
 
             try:
                 initial_price = float(row["initial_price"])
@@ -63,7 +63,6 @@ def save_portfolio(path: str, portfolio: dict) -> None:
         writer.writerow(["symbol", "shares"])
 
         for symbol, shares in portfolio.items():
-            # Keep it simple; assume other modules already keep it clean.
             writer.writerow([symbol, shares])
 
 
