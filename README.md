@@ -108,4 +108,12 @@ This prevents conflicts and ensures everyone works with the latest version.
 
 ---
 
+## ▶️ Running the Streamlit App
+
+1. Install dependencies:
+   - `pip install -r requirements.txt`
+2. Start the app:
+   - `streamlit run app.py`
+
+The CLI workflow remains unchanged, and the Streamlit app provides a browser-based UI.
 

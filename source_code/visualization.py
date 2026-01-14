@@ -82,3 +82,31 @@ def plot_allocation_pie(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, f
     plt.title("Portfolio Allocation (by Current Value)")
     plt.axis("equal")  # makes the pie chart a circle
     plt.show()
+
+
+def allocation_pie_figure(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, float]]) -> plt.Figure:
+    """
+    Return a matplotlib figure showing the portfolio allocation pie chart.
+    """
+    _validate_inputs(portfolio, stocks)
+
+    if not portfolio:
+        raise ValueError("Cannot plot allocation: portfolio is empty.")
+
+    labels = []
+    values = []
+
+    for symbol, qty in portfolio.items():
+        current_price = _get_current_price(stocks, symbol)
+        labels.append(symbol)
+        values.append(qty * current_price)
+
+    total_value = sum(values)
+    if total_value <= 0:
+        raise ValueError("Cannot plot allocation: total portfolio value is zero or negative.")
+
+    fig, ax = plt.subplots()
+    ax.pie(values, labels=labels, autopct="%1.1f%%")
+    ax.set_title("Portfolio Allocation (by Current Value)")
+    ax.axis("equal")
+    return fig
