@@ -1,0 +1,35 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.13\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.10\" project-jdk-type=\"Python SDK\" />\r\n  <component name=\"PythonCompatibilityInspectionAdvertiser\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ebd1811d87aea30dc6d6102c7dce482524d6eb05)
++++ b/.idea/misc.xml	(date 1768202871588)
+@@ -3,7 +3,7 @@
+   <component name="Black">
+     <option name="sdkName" value="Python 3.13" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13" project-jdk-type="Python SDK" />
+   <component name="PythonCompatibilityInspectionAdvertiser">
+     <option name="version" value="3" />
+   </component>
+Index: .idea/intro_to_python_project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/source code\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.10\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+===================================================================
+diff --git a/.idea/intro_to_python_project.iml b/.idea/intro_to_python_project.iml
+--- a/.idea/intro_to_python_project.iml	(revision ebd1811d87aea30dc6d6102c7dce482524d6eb05)
++++ b/.idea/intro_to_python_project.iml	(date 1768202871580)
+@@ -4,7 +4,7 @@
+     <content url="file://$MODULE_DIR$">
+       <sourceFolder url="file://$MODULE_DIR$/source code" isTestSource="false" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file

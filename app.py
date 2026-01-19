@@ -207,8 +207,10 @@ elif page == "Save/Load portfolio":
             except Exception as exc:
                 st.error(f"Load failed: {exc}")
 
-    if portfolio:
+    current_portfolio: PortfolioDict = st.session_state.portfolio
+
+    if current_portfolio:
         st.subheader("Current holdings")
-        st.table(_format_portfolio_table(portfolio))
+        st.table(_format_portfolio_table(current_portfolio))
     else:
         st.info("Portfolio is empty.")

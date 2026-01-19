@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bc9c979-311c-4533-ac48-3bfaed2a345e" name="Changes" comment="renamed source code folder">
+      <change beforePath="$PROJECT_DIR$/source_code/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_code/visualization.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="patrick" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="codex/add-streamlit-frontend-without-breaking-cli" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOQaQDjM68jtan&quot;,
+        &quot;number&quot;: 14
+      },
+      &quot;lastSeen&quot;: 1768149984239
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/paddywestphal/intro_to_python_project.git&quot;,
+    &quot;accountId&quot;: &quot;7ab5e9db-13e1-4f5b-81c8-9ec5d10a4bd4&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;paddywestphal&quot;,
+    &quot;repository&quot;: &quot;intro_to_python_project&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="35qbiJZ5XOJwjF0qcbzmtvJob6f" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.menu.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;streamlit-test&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\paddy\PycharmProjects\intro_to_python_project" />
+      <recent name="C:\Users\paddy\PycharmProjects\intro_to_python_project\src" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="pip install -r requirements.txt" />
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PY-252.28238.29" />
+        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bc9c979-311c-4533-ac48-3bfaed2a345e" name="Changes" comment="" />
+      <created>1763840674300</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763840674300</updated>
+      <workItem from="1763840675617" duration="1809000" />
+      <workItem from="1763842552458" duration="2326000" />
+      <workItem from="1763895997476" duration="949000" />
+      <workItem from="1764079452407" duration="133000" />
+      <workItem from="1765359213214" duration="1988000" />
+      <workItem from="1765896590468" duration="246000" />
+      <workItem from="1765898809942" duration="853000" />
+      <workItem from="1766674396302" duration="3402000" />
+      <workItem from="1766696107763" duration="1985000" />
+      <workItem from="1766698266323" duration="206000" />
+      <workItem from="1766698481927" duration="418000" />
+      <workItem from="1766698909584" duration="48000" />
+      <workItem from="1766757975005" duration="91000" />
+      <workItem from="1766758107469" duration="69000" />
+      <workItem from="1766758186250" duration="4258000" />
+      <workItem from="1768139109480" duration="2363000" />
+      <workItem from="1768141598866" duration="1145000" />
+      <workItem from="1768149799976" duration="47000" />
+      <workItem from="1768149853028" duration="3208000" />
+      <workItem from="1768202821872" duration="18000" />
+      <workItem from="1768202850703" duration="97000" />
+      <workItem from="1768202964056" duration="87000" />
+      <workItem from="1768203057509" duration="1597000" />
+      <workItem from="1768207030795" duration="1825000" />
+      <workItem from="1768305905019" duration="4627000" />
+      <workItem from="1768393503568" duration="2049000" />
+      <workItem from="1768841814067" duration="853000" />
+    </task>
+    <task id="LOCAL-00001" summary="Test">
+      <option name="closed" value="true" />
+      <created>1763840789904</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763840789904</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Test">
+      <option name="closed" value="true" />
+      <created>1763841859266</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763841859266</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added folders">
+      <option name="closed" value="true" />
+      <created>1763844085167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763844085167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added folders">
+      <option name="closed" value="true" />
+      <created>1763844144244</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763844144244</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added folders">
+      <option name="closed" value="true" />
+      <created>1765394521573</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765394521573</updated>
+    </task>
+    <task id="LOCAL-00006" summary="corresponding to TASK B1. Added main menu loop.">
+      <option name="closed" value="true" />
+      <created>1766679969735</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1766679969735</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added input validation for menu items, stock ticker symbols and quantites (positive whole int)">
+      <option name="closed" value="true" />
+      <created>1766696984714</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766696984714</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added input validation for menu items, stock ticker symbols and quantites (positive whole int)">
+      <option name="closed" value="true" />
+      <created>1766762468918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766762468918</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added some more error handling to the menu and enter to continue after a menu action has been completed">
+      <option name="closed" value="true" />
+      <created>1768140845914</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1768140845914</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added a default portfolio dictionary for testing (line 206)">
+      <option name="closed" value="true" />
+      <created>1768142204259</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1768142204259</updated>
+    </task>
+    <task id="LOCAL-00011" summary="bug fix buy and share">
+      <option name="closed" value="true" />
+      <created>1768152653856</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768152653856</updated>
+    </task>
+    <task id="LOCAL-00012" summary="bug fix buy and share">
+      <option name="closed" value="true" />
+      <created>1768152683056</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1768152683056</updated>
+    </task>
+    <task id="LOCAL-00013" summary="none">
+      <option name="closed" value="true" />
+      <created>1768203144516</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768203144516</updated>
+    </task>
+    <task id="LOCAL-00014" summary="none">
+      <option name="closed" value="true" />
+      <created>1768209196932</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768209196932</updated>
+    </task>
+    <task id="LOCAL-00015" summary="renamed source code folder">
+      <option name="closed" value="true" />
+      <created>1768394073771</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1768394073771</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test" />
+    <MESSAGE value="added folders" />
+    <MESSAGE value="corresponding to TASK B1. Added main menu loop." />
+    <MESSAGE value="added input validation for menu items, stock ticker symbols and quantites (positive whole int)" />
+    <MESSAGE value="added some more error handling to the menu and enter to continue after a menu action has been completed" />
+    <MESSAGE value="added a default portfolio dictionary for testing (line 206)" />
+    <MESSAGE value="bug fix buy and share" />
+    <MESSAGE value="none" />
+    <MESSAGE value="renamed source code folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed source code folder" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/intro_to_python_project$menu.coverage" NAME="menu Coverage Results" MODIFIED="1768312624146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source code" />
+    <SUITE FILE_PATH="coverage/intro_to_python_project$app.coverage" NAME="app Coverage Results" MODIFIED="1768394705203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

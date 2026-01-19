@@ -48,14 +48,14 @@ def _get_current_price(stocks: Dict[str, Dict[str, float]], symbol: str) -> floa
 
     return float(price)
 
-
+"""
 def plot_allocation_pie(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, float]]) -> None:
-    """
-    Plot a pie chart showing how the portfolio's total *current value* is allocated across stocks.
-    - Create a pie chart that shows what share of total portfolio value comes from each stock.
-    - Use matplotlib.
-    - It can simply display the chart (plt.show()).
-    """
+    
+    #Plot a pie chart showing how the portfolio's total *current value* is allocated across stocks.
+    #- Create a pie chart that shows what share of total portfolio value comes from each stock.
+    #- Use matplotlib.
+    #- It can simply display the chart (plt.show()).
+    
     _validate_inputs(portfolio, stocks)
 
     if not portfolio:
@@ -83,11 +83,11 @@ def plot_allocation_pie(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, f
     plt.axis("equal")  # makes the pie chart a circle
     plt.show()
 
-
+"""
 def allocation_pie_figure(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, float]]) -> plt.Figure:
-    """
-    Return a matplotlib figure showing the portfolio allocation pie chart.
-    """
+   
+    #Return a matplotlib figure showing the portfolio allocation pie chart.
+    
     _validate_inputs(portfolio, stocks)
 
     if not portfolio:
