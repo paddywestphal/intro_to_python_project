@@ -48,7 +48,7 @@ def _get_current_price(stocks: Dict[str, Dict[str, float]], symbol: str) -> floa
 
     return float(price)
 
-"""
+# This is the plot when using the CLI menu
 def plot_allocation_pie(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, float]]) -> None:
     
     #Plot a pie chart showing how the portfolio's total *current value* is allocated across stocks.
@@ -83,7 +83,7 @@ def plot_allocation_pie(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, f
     plt.axis("equal")  # makes the pie chart a circle
     plt.show()
 
-"""
+#this is the plot when using the app
 def allocation_pie_figure(portfolio: Dict[str, int], stocks: Dict[str, Dict[str, float]]) -> plt.Figure:
    
     #Return a matplotlib figure showing the portfolio allocation pie chart.
